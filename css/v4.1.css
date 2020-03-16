@@ -1,0 +1,182 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+.Change-txt{
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+  text-align: center;
+  margin:20px;
+}
+.navbar {
+  margin-top: 10px;
+  overflow: hidden;
+  background-color:#fff; /*#333;*/
+}
+.heading{
+  font-family: 'Roboto Slab', serif;
+  font-size: 42;
+  color:black;
+  float:left;
+  padding: 10px;
+  padding-top:15px;
+  margin:0px;
+}
+.navbar a{
+  
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  color: #333;
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #4de8f4/*red*/;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.Sort-btn button {
+      float: right;
+        display:block;
+        width:180px;
+        height: 40px;
+        padding: 10px;
+       padding-top: 10px;
+       border-radius: 6px;
+        margin: 0px;
+        margin-top: 2px;
+        margin-right: 30px;
+        background:#4de8f4;
+        font-size:20px;
+        color:#fff;
+        cursor:pointer;
+      }
+
+.Sort-btn button:hover {
+        background:#37a08e;
+
+        
+      }
+
+.Shortest-Path a {
+  height:10px;
+  width:10px;
+  padding:10px;
+  margin:0;
+  background-color: rgb(255, 254, 106);  
+}
+
+
+.Visited a {
+
+  height:10px;
+  width:10px;
+  padding:10px;
+  margin:0px;
+  background-color:#64c5ff;
+}
+
+.Visited2 a {
+
+  height:10px;
+  width:10px;
+  padding:10px; 
+  margin:0px;
+  margin-right:5px;
+  background-color:#4de8f4 ;
+}
+.Walls a {
+  height:10px;
+  width:10px;
+  margin:0px;
+  padding:10px;
+  background-color: black;
+  
+}
+.Unvisited a {
+
+  height:10px;
+  width:10px;
+  padding:10px;
+  margin:0px;
+  background-color:white;
+  border: rgb(175, 216, 248) solid 1px ;
+}
+
+.show a{
+  margin:15px;
+  margin-left:1px;
+  margin-right: 10px;
+
+  float:right;
+}
+
+.show-left a{
+  margin:15px;
+  margin-left:10px;
+  margin-right: 1px;
+
+  float:left;
+}
+
+/*.show-left img{
+
+  border: rgb(175, 216, 248) solid 1px ;
+}*/
+canvas{
+    display:block;
+    position: relative;;
+        left: 10px;
+        top:10px;
+  }

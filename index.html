@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pathfinding Algorithim</title> 
+ <link rel = "icon" type = "image/png" href = "maze.png">
+
+<link rel="stylesheet" type="text/css" href="css/v4.1.css">
+<link rel="stylesheet" type="text/css" href="css/tutorial.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+	<div class="navbar">
+<span class="heading">Pathfinding Algorithms</span>
+  <!--a href="#home">Home</a-->
+  <!--a href="#news">News</a-->
+  <div class="dropdown">
+    <button class="dropbtn">Algorithms 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <div class="BFS-btn"><a href="#">BFS Shortes Path</a></div>
+       <div class="DFS-btn"><a href="#">DFS Shortes Path</a></div>
+      <!--a href="#">Link 3</a-->
+    </div>
+  </div>
+   
+   
+   
+   <div class="dropdown">
+    <button class="dropbtn">Speed 
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-content">
+       <div class="slow"><a href="#">Slow</a></div>
+       <a href="#">Normal</a>
+       <div class="fast"><a href="#">Fast</a></div>
+    </div>
+    </div>
+
+<div class="Sort-btn">
+<button type="submit" class="btn">Visualize</button>
+</div>
+
+	
+    <div class="Clear-Wall"><a href="#">Clear Board</a></div>
+    <a href="#">Clear Walls</a>
+    <a href="#">Clear Path</a>
+  
+
+</div>
+
+
+
+<div class="show">
+<div class = "show-left">
+<a>Start Node &nbsp<img src="images/start.png" height="18" width="18"></a>
+
+
+<a>End Node &nbsp<img src="images/target.png" height="18" width="18"></a>
+
+</div>
+
+<a>Walls</a>
+<span class="Walls"><a>&nbsp&nbsp&nbsp</a></span>
+
+<a>Shortest-Path Node</a>
+<span class="Shortest-Path"><a>&nbsp&nbsp&nbsp</a></span>
+
+<a>Visited</a>
+<span class="Visited2"><a>&nbsp&nbsp&nbsp</a></span>
+<span class="Visited"><a>&nbsp&nbsp&nbsp</a></span>
+
+<a>Unvisited Nodes</a>
+<span class="Unvisited"><a>&nbsp&nbsp&nbsp</a></span>
+
+</div><br><br><br>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <div class="page-no"></div>
+     <p id="tutorial-img"> <img src="maze.png" class="avatar"></p>
+    </div>
+
+    <div class="container">
+
+
+      <div class="para">
+      <p><h1>Welcome to Pathfinding Visualizer!</h1><br>
+      This short tutorial will walk you through all of the features of this application.<br><br>
+      If you want to dive right in, feel free to press the "Skip Tutorial" button below. Otherwise, press "Next"!</p><br>
+      </div>
+      
+      <a class="prev">Previous</a>
+      <a class="next">Next</a>
+      <p></p><br>
+        </div>  
+       
+        
+    </div>      
+    </form>
+<div class="Change-txt"><p>Pick An Algorithm And Visualize It!</p></div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <script src="js/bfs4.1.js"></script>
+  <script src="js/tutorial.js"></script>
+
+</html>    
