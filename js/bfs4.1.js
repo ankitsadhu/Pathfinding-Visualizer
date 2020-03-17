@@ -28,7 +28,18 @@ var speed = 50;
 var wall =99;
 var BFS_occcur = 0;
 var DFS_occur = 0;
+let img_start_point;
+let img_end_point;
+let img_path_start;
+let img_path_end;
 
+
+function preload() {
+	img_start_point = loadImage("images/start.png");
+	img_path_start = loadImage("images/path_start.jpg");
+	img_end_point = loadImage("images/target.png");  
+	img_path_end = loadImage("images/path_end.jpg");  
+}
 
 function setup(){
 	createCanvas(windowWidth*0.98,windowHeight*0.7);
@@ -97,10 +108,27 @@ function draw(){
 	let k =0;
 	for(let i =0;i<rows;i++){	
 	  for(let j=0;j<cols;j++){
+		var flag = grid[i][j]
 		strokeWeight(0.5);
+		
+		if(flag == starting_vertex){ 
+			if(states[k]!= 7){
+			image(img_start_point, j*w,i*h, w, h);
+			}else{
+			 image(img_path_start, j*w,i*h, w, h);
+			}
+	 }
 
 
-		 if(states[k] == 2){	//in the queue color:greenish blue
+	 else if(flag == destination_vertex){ 
+		 if(states[k]!= 7){ 
+			 image(img_end_point, j*w,i*h, w, h);
+		 }else{
+			 image(img_path_end, j*w,i*h, w, h);
+			}
+	 }
+
+		else if(states[k] == 2){	//in the queue color:greenish blue
 			fill('#4de8f4'); 
 			rect(j*w,i*h, w, h,7,7,7,7);
 		}

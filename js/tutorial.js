@@ -26,7 +26,7 @@ function imageSwap(){
   
   switch(Choise) {
     case 0:
-     repImage = "<img src = 'Algo.png'>";
+     repImage = "<img src = 'images/Algo.png'>";
      document.getElementById("tutorial-img").innerHTML = repImage;
      document.querySelector(".para").innerHTML = "<h1><b>Choose an algorithm from the dropdown menu<b></h1>";
      document.querySelector(".page-no").innerHTML = "1/3";
@@ -34,14 +34,14 @@ function imageSwap(){
 
 
      case 1:
-     repImage = "<img src = 'Selection.png'>";
+     repImage = "<img src = 'images/Selection.png'>";
      document.getElementById("tutorial-img").innerHTML = repImage;
      document.querySelector(".para").innerHTML = "<h1>Click the visualize button to visualize the following algorithm</h1>";
      document.querySelector(".page-no").innerHTML = "2/3";
      break;
 
      case 2:
-     repImage = "<img src = 'Wall.png'>";
+     repImage = "<img src = 'images/Wall.png'>";
      document.getElementById("tutorial-img").innerHTML = repImage;
      document.querySelector(".para").innerHTML = "<h1><b>Adding walls</b></h1><br>Click on the grid to add wall and double click to remove wall<br>";
      document.querySelector(".page-no").innerHTML = "3/3";
