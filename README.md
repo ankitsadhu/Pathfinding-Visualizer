@@ -3,9 +3,9 @@
 
 ># Try (use Safari or Chorme): https://ankitsadhu.github.io/Pathfinding-Visualizer/ 
 
-ScreenShots
+ScreenShot
 
-![ScreenShoot](screenshot.png)
+![ScreenShoot](images/screenshot.png)
 
 # What you need to run this
 
