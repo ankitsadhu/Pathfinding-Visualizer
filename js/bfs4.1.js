@@ -73,9 +73,30 @@ function setup(){
 	    Choise = 1;
   	});
 
-	document.querySelector(".Clear-Wall").addEventListener("click",function(){
-	  adjacent_matrix();
+	document.querySelector(".Clear-Board").addEventListener("click",function(){
+	  for(let i=0;i<n;i++){
+		  states[i]=0;
+	  }
+		adjacent_matrix();
 	});
+
+	document.querySelector(".Clear-Wall").addEventListener("click",function(){
+		for(let i=0;i<n;i++){
+			if(states[i]== 99){
+				states[i] = 0;
+			}
+		}
+		 
+	  });
+
+	document.querySelector(".Clear-Path").addEventListener("click",function(){
+		for(let i=0;i<n;i++){
+			if(states[i]== 7){
+				states[i] = 3;
+			}
+		}
+		 
+	  });
 
 	document.querySelector(".btn").addEventListener("click",function(){
   	
