@@ -1,4 +1,4 @@
-var NIL = -1;
+;var NIL = -1;
 var infinity = 9999;
 var cols =57;
 var rows = 22;
@@ -21,13 +21,16 @@ var wall_arr = new Array(n);
 var front = -1;
 var rear = -1;
 var top_aa = -1;
-var starting_vertex = 0;
-var destination_vertex = 1253;
+var starting_vertex;
+var destination_vertex; 
 var Choise = 2;
 var speed = 50;
 var wall =99;
 var BFS_occcur = 0;
 var DFS_occur = 0;
+var dragging = false; // Is the object being dragged?
+var rollover = false;
+var target_dragging = false;
 let img_start_point;
 let img_end_point;
 let img_path_start;
@@ -45,7 +48,8 @@ function setup(){
 	createCanvas(windowWidth*0.98,windowHeight*0.7);
 	w = width / cols;
 	h = height / rows;
-
+	starting_vertex =0;
+	destination_vertex =600;
 	
 }
 
@@ -104,7 +108,7 @@ function setup(){
 		    case 0:
 		    console.log("BFS");
 		    document.querySelector(".Change-txt").innerHTML ="<p>Breath-First Search is <b>unweighted</b> and <b>gaurantee</b> the shortest path! </p>";
-		    BFS_traversal();
+			BFS_traversal();
 		    break;
 		    
 		    case 1:
@@ -132,7 +136,21 @@ function draw(){
 		var flag = grid[i][j]
 		strokeWeight(0.5);
 		
-		if(flag == starting_vertex){ 
+
+		if(dragging && flag == starting_vertex) {
+			let drag_x = floor(mouseX / h);
+			let drag_y = floor(mouseY / w);
+			 starting_vertex = grid[drag_y][drag_x];
+		}
+
+		else if(target_dragging && flag == destination_vertex) {
+			let drag_x = floor(mouseX / h);
+			let drag_y = floor(mouseY / w);
+			destination_vertex = grid[drag_y][drag_x];
+			
+		 }
+
+		else if(flag == starting_vertex){ 
 			if(states[k]!= 7){
 			image(img_start_point, j*w,i*h, w, h);
 			}else{
@@ -271,9 +289,11 @@ function delete_queue() {
  function BFS_traversal() {
  	let v;
  	for(v=0;v<n;v++){
+ 		if(states[v]!= 99){
  		states[v] = initial;
  		predecessor[v]=NIL;
  		distance[v]= infinity;
+ 	    }
  	}
  	 
  	BFS(starting_vertex);
@@ -347,9 +367,11 @@ function pop_stack() {
 function DFS_traversal() {
 	let v;
  	for(v=0;v<n;v++){
+ 		if(states[v]!= 99){
  		states[v] = initial;
  		predecessor[v]=NIL;
  		//distance[v]= infinity;
+ 		}
  	}
  	 
 
@@ -456,6 +478,16 @@ function mousePressed() {
 	var flag = grid[y][x] ;
 		
 		if(flag == starting_vertex || flag == destination_vertex){    //Cannot create wall at staring/ending node
+		
+			if(flag== starting_vertex)
+			{dragging = true;
+			 rollover =true;
+			// If so, keep track of relative location of click to corner of rectangle
+			//offsetX = x-mouseX;
+			//offsetY = y-mouseY;
+			}else{
+				target_dragging =true;
+			}
 		}
 
 		else {
@@ -485,6 +517,19 @@ function mousePressed() {
 	 }
 
 }
+
+
+function mouseReleased() {
+	//Quit dragging
+	if(dragging ==true){
+	dragging = false;
+	rollover =false;
+	}
+	if(target_dragging ==true){
+		target_dragging =false;
+	}
+  }
+
 
 
 //delay function
