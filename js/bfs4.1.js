@@ -106,13 +106,13 @@ function setup(){
   	
 		switch(Choise) {
 		    case 0:
-		    console.log("BFS");
+		    //console.log("BFS");
 		    document.querySelector(".Change-txt").innerHTML ="<p>Breath-First Search is <b>unweighted</b> and <b>gaurantee</b> the shortest path! </p>";
 			BFS_traversal();
 		    break;
 		    
 		    case 1:
-		    console.log("DFS");
+		   // console.log("DFS");
 		    document.querySelector(".Change-txt").innerHTML ="<p>Dreath-First Search is <b>unweighted</b> and does not <b>gaurantee</b> the shortest path! </p>";
 		    DFS_traversal();
 		    break;
@@ -249,7 +249,7 @@ function draw(){
 function insert_queue(vertex){
 	
 	if(rear == n-1){
-		console.log("Queue Overflow");
+	//	console.log("Queue Overflow");
 	}
 	else{
 
@@ -276,7 +276,7 @@ function delete_queue() {
 	
 	var del_item;
 	if(front == -1 || front> rear){
-		console.log("Queue Underflow");
+		//console.log("Queue Underflow");
 	}
 	else{
 		del_item = queue_arr[front];
@@ -317,7 +317,7 @@ function delete_queue() {
  				insert_queue(i);
  				states[i] =waiting;
  				predecessor[i] = v;
- 				console.log("i&v" +i +v);
+ 				//console.log("i&v" +i +v);
  				distance[i] = distance[v]+1;
  			}
  		}
@@ -354,7 +354,7 @@ function pop_stack() {
 	
 	var v;
 	if(top_aa == -1){
-		console.log("Stack Underflow");
+		//console.log("Stack Underflow");
 	}
 	else{
 		v = stack_arr[top_aa];
@@ -387,7 +387,7 @@ function DFS_traversal() {
  		await sleep(speed);
  		v = pop_stack();
  		states[v] = visited;
- 		console.log("poped stack = " +v);
+ 	//	console.log("poped stack = " +v);
  		if(states[v]==initial){
  			states[v] =visited;
  		}
@@ -397,7 +397,7 @@ function DFS_traversal() {
  				push_stack(i);
  				states[i] = waiting;
  				predecessor[i] = v;
- 				console.log("predecessor =" +v);
+ 				//console.log("predecessor =" +v);
  				distance[i] = distance[v]+1;
  			}
  		}
@@ -434,20 +434,20 @@ async function shortest_path(){
 			await sleep(speed);
 		shortPath = path[i];
 		states[shortPath] = 7;               //-> 7 shortest 
-		console.log("shortest path " + path[i]);
+		//console.log("shortest path " + path[i]);
 	 	}
 		 states[destination_vertex] = 7; 
 		 
 		 if(Choise == 0){
 		 BFS_occcur++;
 		 queue_reset();
-		 console.log("BFS shortes_path");
+		// console.log("BFS shortes_path");
 		}
 
 		else if(Choise == 1){
 			DFS_occur++;
 			
-			console.log("DFS shortes path");
+			//console.log("DFS shortes path");
 			dfs_reset();
 		}
 
