@@ -289,14 +289,16 @@ function delete_queue() {
  function BFS_traversal() {
  	let v;
  	for(v=0;v<n;v++){
- 		if(states[v]!= 99){
- 		states[v] = initial;
- 		predecessor[v]=NIL;
- 		distance[v]= infinity;
- 	    }
- 	}
- 	 
+	   if(states[v]!= 99){
+        	 states[v] = initial;
+		 predecessor[v]=NIL;
+		 distance[v]= infinity;
+		}
+	}
+
  	BFS(starting_vertex);
+		
+	
  }
 
 
