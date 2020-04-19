@@ -307,7 +307,7 @@ function delete_queue() {
  	states[v] = waiting;
  	distance[v] = 0;
  	predecessor[v]= NIL;
- 	while(!isEmpty_queue())
+ 	while(!isEmpty_queue() &&v!= destination_vertex )
  	{
  		v = delete_queue();
  		states[v] = visited;
@@ -382,7 +382,7 @@ function DFS_traversal() {
  async function DFS(v) {
     
  	push_stack(v);
- 	while(!isEmpty_stack())
+ 	while(!isEmpty_stack() && v != destination_vertex)
  	{
  		await sleep(speed);
  		v = pop_stack();
