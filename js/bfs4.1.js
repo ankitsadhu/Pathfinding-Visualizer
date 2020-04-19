@@ -290,14 +290,15 @@ function delete_queue() {
  	let v;
  	for(v=0;v<n;v++){
 		if(v!=destination_vertex){ //edited
- 		if(states[v]!= 99){
- 		states[v] = initial;
- 		predecessor[v]=NIL;
- 		distance[v]= infinity;
- 	    }
- 	}
+			if(states[v]!= 99){
+			states[v] = initial;
+			predecessor[v]=NIL;
+			distance[v]= infinity;
+		    }
+
  	 
  	BFS(starting_vertex);
+		}
 	}
  }
 
